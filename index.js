@@ -12,7 +12,7 @@ console.log(lista.join());
 const objLista = [
   { nev: "Jenő", kor: 23, nem: "férfi" },
   { nev: "Jani", kor: 23, nem: "férfi" },
-  { nev: "Juli", kor: 23, nem: "férfi" },
+  { nev: "Juli", kor: 23, nem: "nő" },
   { nev: "Jácint", kor: 23, nem: "férfi" },
   { nev: "Béla", kor: 23, nem: "férfi" },
 ];
@@ -42,7 +42,7 @@ const parosLista = lista.filter((a) => {
 console.log(parosLista.join());
 
 const noObjLista = objLista.filter((a) => {
-  return (a.nem = "nő");
+  return (a.nem == "nő");
 });
 
 megjelenit(objLista, document.querySelector(".tartalom"));
@@ -75,18 +75,19 @@ kivalasztElem.addEventListener("change", () => {
         break;
     case "nok":
         const noObjLista = objLista.filter((a) => {
-            return (a.nem = "nő");
+            return (a.nem == "nő");
           });
           megjelenit(noObjLista, document.querySelector(".tartalom"));
         break;
     case "ferfiak":
         const ferfiObjLista = objLista.filter((a) => {
-            return (a.nem = "férfi");
+            return (a.nem == "férfi");
           });
           megjelenit(ferfiObjLista, document.querySelector(".tartalom"));
         break;
     case "nagykoru":
-        
+        const felnott = objlista.filter(elem => elem.kor > 18)
+        megjelenit(felnott, document.querySelector(".tartalom"))
         break;
     
   };
