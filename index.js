@@ -86,7 +86,7 @@ kivalasztElem.addEventListener("change", () => {
           megjelenit(ferfiObjLista, document.querySelector(".tartalom"));
         break;
     case "nagykoru":
-        const felnott = objlista.filter(elem => elem.kor > 18)
+        const felnott = objLista.filter(elem => elem.kor > 18)
         megjelenit(felnott, document.querySelector(".tartalom"))
         break;
     
